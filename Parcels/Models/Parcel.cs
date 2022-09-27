@@ -1,20 +1,29 @@
 using System.Collections.Generic; 
 
-namespace ToDoList.Models
+namespace Parcels.Models
 {
-  public class Item
+  public class Parcel
   {
 
-    public string Description { get; set; }
-    private static List<Item> _instances = new List<Item> {}; 
+    public int Length { get; set; }
+    public int Width { get; set; }
+    public int Depth { get; set; }
+    public int Volume { get; set; }
+    public int Weight { get; set; }
+    //private static List<Parcel> _instances = new List<Parcel> {}; 
 
-    public Item(string description)
+    public Parcel(int len, int width, int depth, int weight)
     {
-      Description = description;
-      _instances.Add(this); //Adds Item to '_instances'
+      Length = len; //In Centimenters
+      Width = width; //In Centimenters
+      Depth = depth; //In Centimenters
+      Volume = Len * Width * Depth;
+      Weight = weight; 
+
+      //_instances.Add(this); //Adds Parcel to '_instances'
     }
 
-    public static List<Item> GetAll()  //'Getter' method
+    public static List<Parcel> GetAll()  //'Getter' method
     {
       return _instances;
     }
@@ -22,6 +31,10 @@ namespace ToDoList.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static int Volume(){
+      return Volume;
     }
 
   }
