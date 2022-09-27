@@ -17,7 +17,7 @@ namespace Parcels.Models
       Length = len; //In Centimenters
       Width = width; //In Centimenters
       Depth = depth; //In Centimenters
-      Volume = Len * Width * Depth;
+      Volume = Length * Width * Depth;
       Weight = weight; 
 
       //_instances.Add(this); //Adds Parcel to '_instances'
@@ -33,8 +33,15 @@ namespace Parcels.Models
       _instances.Clear();
     }
 
-    public static int Volume(){
+    public static int Volume()
+    {
       return Volume;
+    }
+
+    public static string CostToShip()
+    {
+      int retval = (2*Volume)+(3*Weight);
+      return (string)retval; 
     }
 
   }
