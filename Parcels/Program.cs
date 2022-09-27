@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace ToDoList
+namespace Parcels
 {
   public class Program
   {

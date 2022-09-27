@@ -2,28 +2,27 @@ using Microsoft.AspNetCore.Mvc;
 using ToDoList.Models;
 using System.Collections.Generic;
 
-namespace ToDoList.Controllers
+namespace Parcels.Controllers
 {
-  public class ItemsController : Controller
+  public class ParcelsController : Controller
   {
 
-    [HttpGet("/items")]
+    [HttpGet("/parcel")]
     public ActionResult Index()
     {
-      List<Item> allItems = Item.GetAll();
-      return View(allItems);
+      return View();
     }
 
-    [HttpGet("/items/new")]
+    [HttpGet("/parcel/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
     [HttpPost("/items")]
-    public ActionResult Create(string description)
+    public ActionResult Create(int len, int w)
     {
-      Item myItem = new Item(description);
+      Parcel myParcel = new Parcel(description);
       return RedirectToAction("Index");
     }
 
