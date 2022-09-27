@@ -19,11 +19,12 @@ namespace Parcels.Controllers
       return View();
     }
 
-    [HttpPost("/items")]
-    public ActionResult Create(int len, int w)
+    [HttpPost("/parcel")]
+    public ActionResult Create(int len, int width, int depth, int weight)
     {
-      Parcel myParcel = new Parcel(description);
-      return RedirectToAction("Index");
+      Parcel myParcel = new Parcel(len, width, depth, weight);
+      return View("Index", myParcel);
+      //return RedirectToAction("Index", myParcel);
     }
 
   }
