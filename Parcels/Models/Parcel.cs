@@ -33,10 +33,10 @@ namespace Parcels.Models
       _instances.Clear();
     }
 
-    public static int Volume()
-    {
-      return Volume;
-    }
+    // public static int GetVolume()
+    // {
+    //   return Volume;
+    // }
 
     public static string CostToShip()
     {

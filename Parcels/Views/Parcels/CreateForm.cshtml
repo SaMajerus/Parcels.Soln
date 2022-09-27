@@ -6,9 +6,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
-    <form action="/items" method="post">
-      <label for="description">Add a new item</label>
-      <input id="description" name="description" type="text">
+    <form action="/parcel" method="post">
+    <h3>Input the dimensions of your parcel in centimeters and weight in pounds!
+      <label for="len">Length</label>
+      <input id="len" name="len" type="text">
+      <label for="width">Width</label>
+      <input id="width" name="width" type="text">
+      <label for="depth">Depth</label>
+      <input id="depth" name="depth" type="text">
+      <label for="weight">Weight</label>
+      <input id="weight" name="weight" type="text">
       <button type="submit">Submit</button>
     </form>
   </body>
