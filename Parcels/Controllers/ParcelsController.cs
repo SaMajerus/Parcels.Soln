@@ -23,17 +23,20 @@ namespace Parcels.Controllers
     public ActionResult Create(int len, int width, int depth, int weight)
     {
       //Prevent a 'Parcel' object from being created if any of the form fields is blank.
-      if (((typeof(len) == int) && (typeof(width) == int) && (typeof(depth) == int) && (typeof(weight) == int)) && ((len != null) && (width != null) && (depth != null) && (weight != null)))
+      try 
       {
-        Parcel myParcel = new Parcel(len, width, depth, weight);
-        
-        //return View("Index", myParcel);
-        return RedirectToAction("Index", myParcel);
+        if (!((len == null) && (width == null) && (depth == null) && (weight == null)))
+        {
+          Parcel myParcel = new Parcel(len, width, depth, weight);
+          
+          //return View("Index", myParcel);
+          return RedirectToAction("Index", myParcel);
+        }
       } 
-      else 
+      catch (Exception e) 
       {
         return "Error creating new Parcel: One or more inputs are invalid.";
-      }
+      } 
     }
 
   }

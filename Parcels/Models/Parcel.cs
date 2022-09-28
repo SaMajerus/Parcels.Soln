@@ -12,17 +12,19 @@ namespace Parcels.Models
     public int Weight { get; set; }
     //private static List<Parcel> _instances = new List<Parcel> {}; 
 
-    public Parcel(int len, int width, int depth, int weight)
+    public Parcel(string len, string beam, string hgt, string wgt)
     {
-      Length = len; //In Centimenters
-      Width = width; //In Centimenters
-      Depth = depth; //In Centimenters
+      Length = 
+      if(int.TryParse(len, out int length); //In Centimenters
+      Width = int.TryParse(beam, out int width); //In Centimenters
+      Depth = int.TryParse(hgt, out int depth); //In Centimenters
       Volume = Length * Width * Depth;
-      Weight = weight; 
+      Weight = int.TryParse(wgt, out int weight); 
 
       //_instances.Add(this); //Adds Parcel to '_instances'
     }
 
+    /*
     public static List<Parcel> GetAll()  //'Getter' method
     {
       return _instances;
@@ -32,16 +34,15 @@ namespace Parcels.Models
     {
       _instances.Clear();
     }
+    */ 
 
-    // public static int GetVolume()
-    // {
-    //   return Volume;
-    // }
+    //No 'Volume()' function because we can just use the property instead. 
 
-    public static string CostToShip()
+    public string CostToShip()
     {
-      int retval = (2*Volume)+(3*Weight);
-      return (string)retval; 
+      int cost = (2*Volume) + (3*Weight);
+      string retval = cost.ToString();
+      return retval; 
     }
 
   }
