@@ -22,21 +22,9 @@ namespace Parcels.Controllers
     [HttpPost("/parcel")]
     public ActionResult Create(int len, int width, int depth, int weight)
     {
-      //Prevent a 'Parcel' object from being created if any of the form fields is blank.
-      try 
-      {
-        if (!((len == null) && (width == null) && (depth == null) && (weight == null)))
-        {
-          Parcel myParcel = new Parcel(len, width, depth, weight);
-          
-          //return View("Index", myParcel);
-          return RedirectToAction("Index", myParcel);
-        }
-      } 
-      catch (Exception e) 
-      {
-        return "Error creating new Parcel: One or more inputs are invalid.";
-      } 
+
+      Parcel myParcel = new Parcel(len, width, depth, weight); 
+      return RedirectToAction("Index", myParcel); 
     }
 
   }

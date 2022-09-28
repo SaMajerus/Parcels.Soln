@@ -12,14 +12,13 @@ namespace Parcels.Models
     public int Weight { get; set; }
     //private static List<Parcel> _instances = new List<Parcel> {}; 
 
-    public Parcel(string len, string beam, string hgt, string wgt)
+    public Parcel(int len, int width, int depth, int weight)
     {
-      Length = 
-      if(int.TryParse(len, out int length); //In Centimenters
-      Width = int.TryParse(beam, out int width); //In Centimenters
-      Depth = int.TryParse(hgt, out int depth); //In Centimenters
+      Length = len; //In Centimenters
+      Width = width; //In Centimenters
+      Depth = depth; //In Centimenters
       Volume = Length * Width * Depth;
-      Weight = int.TryParse(wgt, out int weight); 
+      Weight = weight; 
 
       //_instances.Add(this); //Adds Parcel to '_instances'
     }
